@@ -1,9 +1,14 @@
 import React from 'react';
+import Button from './Button';
 
-function Buttons({ buttonValue, onClick }) {
+export default function Buttons({ onClick }) {
   return (
-    <button type="button" onClick={() => onClick(buttonValue)}>{buttonValue}</button>
+    <p>
+      {
+        [1, 2, 3, 4, 5].map((i) => (
+          <Button onClick={() => onClick(i)} key={i}>{i}</Button>
+        ))
+      }
+    </p>
   );
 }
-
-export default Buttons;
